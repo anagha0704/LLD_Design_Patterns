@@ -1,0 +1,51 @@
+You’re designing a Shopping Cart system that can apply different discount strategies at checkout.
+
+Requirements:
+
+Discount Strategies (implement a DiscountStrategy interface):
+
+1. NoDiscount → no discount applied.
+
+2. PercentageDiscount → apply a percentage discount (e.g., 10%).
+
+3. FixedAmountDiscount → subtract a fixed amount (e.g., $20 off).
+
+ShoppingCart:
+
+Holds a list of items (each with name and price).
+
+Has a DiscountStrategy (composition).
+
+Provides set_discount_strategy(strategy) to switch discounts dynamically.
+
+Method calculate_total() should use the current discount strategy.
+
+Client Code:
+
+Add items to cart.
+
+Try different discount strategies (switch at runtime).
+
+Print final bill each time.
+
+
+****** Initial Solution
+
+- ShoppingCart
+    - strategy: None
+
+    + setStrategy(strategy: DiscountStrategy)->None
+    + calculate_discount(price: float)->float => strategy.apply_discount
+
+- DiscountStrategy
+    - apply_discount(price: float)->float:
+
+Implemented by:
+- NoDiscount
+    - discount = 0
+
+- PercentageDiscount → apply a percentage discount (e.g., 10%).
+    - discount = 10%
+
+- FixedAmountDiscount
+    - discount = 20

@@ -1,0 +1,57 @@
+Problem Statement: Stock Market Ticker
+
+You are designing a Stock Market Ticker system that pushes live stock price updates to multiple subscribers.
+
+Requirements:
+
+StockData (Subject)
+
+Maintains the latest stock prices (e.g., AAPL, GOOG, TSLA).
+
+Allows observers to subscribe and unsubscribe.
+
+Notifies all registered observers whenever stock prices are updated.
+
+Observers
+
+MobileApp → displays the stock price in a simple text format.
+
+TradingBot → reacts to price changes (e.g., prints “BUY” if price falls below threshold, “SELL” if it rises above).
+
+AnalyticsDashboard → shows percentage changes in stock prices.
+
+Client Code
+
+Should demonstrate:
+
+Subscribing different observers.
+
+Updating stock prices (simulate price feed).
+
+Observers automatically reacting to updates.
+
+******** Initial Solution
+
+- StockData
+    - price: float
+    - observers: []
+
+    + subscribe()
+    + notify()
+    + set_new_price()
+
+- Observer
+    + def update()
+
+    + def reaction()
+
+    - MobileApp
+
+    - TradingBot
+
+    - AnalyticsDashboard
+
+- Client
+    - stock
+    - stock.subscribe(observer)
+    - stock.new_price()
