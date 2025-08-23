@@ -1,0 +1,51 @@
+Abstract Factory Patter: Vehicle + Engine Abstract Factory
+
+You are building a vehicle manufacturing system. Each vehicle comes with a specific type of engine, 
+and you want to group related products together without specifying their concrete classes in the client.
+
+Vehicle types: Car, Bike, Truck
+
+Engine types: PetrolEngine, DieselEngine, ElectricEngine
+
+Rules:
+
+A Car can have PetrolEngine or ElectricEngine.
+
+A Bike can have PetrolEngine only.
+
+A Truck can have DieselEngine only.
+
+The client should be able to ask for a vehicle family (vehicle + compatible engine) without knowing the exact concrete classes.
+
+***** Initial Design
+
+- Vehicles
+    + deliver()
+
+    - Car
+    - Bike
+    - Engine
+
+- Engines
+    + start()
+
+    - PetrolEngine
+    - ElectricEngine
+    - DieselEngine
+
+- Factories
+    
+    + create_vehicle(): pass
+    + create_engine(): pass
+
+    - CarFactoryElectric
+    - CarFactoryPetrol
+    - TruckFactoryDiesel
+    - BikeFactoryPetrol
+
+- client
+    - factory = CarFactoryElectric()
+    - vehicle = factory.create_vehicle()
+    - engine = factory.create_engine()
+    - vehicle.deliver()
+    - engine.start()

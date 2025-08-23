@@ -1,0 +1,40 @@
+Problem Statement: Document Approval System
+
+You are designing a Document Approval System for a company.
+
+Documents need to go through different levels of approval based on their type and importance:
+
+Team Lead – Can approve low-priority documents (e.g., internal memos).
+
+Department Manager – Can approve medium-priority documents (e.g., budget requests).
+
+Director – Can approve high-priority documents (e.g., policy changes, large expenditures).
+
+Each approver should handle the document if it’s within their authority, otherwise pass it to the next approver in the chain. 
+The system should allow adding more approvers later without modifying existing ones.
+
+**** Initial Design
+
+- Document
+    - id: str
+    - categoty: str
+
+- Handlers
+     
+    + next_handler(handler):  => self.next = handler
+    + approval()
+
+    - Team Lead
+    - Department
+    - Director
+
+- Client
+
+    - handler = Team_lead()
+    - dept = Department()
+    - director = Director()
+
+    - h = handler.next_handler(dept)
+    - d = dept.next_handler(h)
+
+    - h.approval():

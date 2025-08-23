@@ -1,0 +1,50 @@
+Decorator Pattern: Car Rental System
+
+You are designing a Car Rental System. 
+A customer can rent a basic car, but they may add extra features dynamically:
+
+- GPS Navigation
+
+- Child Seat
+
+- Insurance Coverage
+
+- Roadside Assistance
+
+Each feature should be a decorator that adds extra cost and description to the base rental.
+
+For example:
+
+A plain car costs $50/day.
+
+Adding GPS makes it $65/day.
+
+Adding GPS + Insurance makes it $95/day.
+
+The system should allow combining features without altering the base car class.
+
+********* Intital solution
+
+- Car
+    + get_description(id: str)-> float
+    + get_price(id: str)-> float
+
+- PlainCar(Car)
+    - id: str
+    - description: str
+    - price: float
+
+    + get_description(id: str)-> float
+    + get_price(id: str)-> float
+
+- Feature(Car)
+
+    + get_description(id: str)
+    + get_price(id: str)
+    + get_decorated_description(id: str)-> float
+    + get_decorated_price(id: str)-> float
+    
+    - GPS Navigation
+    - Child Seat
+    - Insurance Coverage
+    - Roadside Assistance

@@ -1,0 +1,48 @@
+Problem Statement: Vehicle Factory
+
+You are building a transport booking system. The system needs to support multiple types of vehicles:
+
+- Car
+
+- Bike
+
+- Truck
+
+Each vehicle should have a method deliver() that prints:
+
+"Delivering by Car"
+
+"Delivering by Bike"
+
+"Delivering by Truck"
+
+The client must not instantiate vehicles directly. 
+Instead, they request them through a VehicleFactory, which decides which object to return based on the input string ("CAR", "BIKE", "TRUCK").
+
+***** Initial Design
+
+- Vehicles
+    + deliver()
+
+    - Car
+    - Bike
+    - Truck
+
+- Factory
+    + request_vehicle(): pass
+
+    - CarFactory
+        + request_Vehicle()
+    
+    - TruckFactory
+        + request_Vehicle()
+    
+    - BikeFactory
+        + request_Vehicle()
+
+-  client
+    - car = CarFactory()
+    - vehicle = car.request_Vehicle()
+    - vehicle.deliver()
+
+---- Delegates creatiob responsibility to subclasses.
