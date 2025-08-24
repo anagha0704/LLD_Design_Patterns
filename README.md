@@ -22,5 +22,6 @@ Each pattern is demonstrated through a small, focused problem to **understand it
 ## Usage
 ```bash
 git clone https://github.com/anagha0704/LLD_Design_Patterns.git
+```
 
 Navigate to any pattern folder and run the Python files to see the examples in action.
