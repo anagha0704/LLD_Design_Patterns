@@ -1,0 +1,38 @@
+Problem Statement: Simplifying Deployment Automation
+
+- Background
+
+In modern software development, deploying an application involves a series of complex and interdependent tasks:
+
+Fetching the latest code from a version control system.
+
+Building the project using tools like Maven or Gradle.
+
+Running automated tests (unit, integration, end-to-end).
+
+Deploying the build to a production environment.
+
+Each of these steps is managed by separate subsystems, each with its own specific API and configuration.
+
+- Problem
+
+Currently, the orchestration of these tasks is handled by a DeploymentOrchestrator class, which directly interacts with each subsystem. 
+This approach leads to several issues:
+
+    - High Client Complexity: The DeploymentOrchestrator must be aware of every subsystem, including the methods to call, their sequence, and handling success or failure. This bloats the client’s responsibility and tightly couples it to the internal workings of the system.
+
+    - Tight Coupling Between Subsystems: Each subsystem is directly invoked from the orchestrator. A change in any one of them (e.g., compileProject() now takes environment flags) will ripple through the orchestrator and potentially every other place it’s used.
+
+    - Poor Maintainability: Adding new features, such as a code quality scan or Slack notifications after deployment, requires updating the orchestrator every time, violating the Single Responsibility Principle.
+
+    - Scattered Workflow Logic: If other parts of the system (e.g., a webhook handler or a CI trigger) need to perform a deployment, you either duplicate the logic elsewhere or reuse the orchestrator, which is already becoming monolithic and rigid.
+
+- Objective
+
+Implement the Facade Design Pattern to address these issues by:
+
+Introducing a DeploymentFacade class that provides a simplified and unified interface for clients to perform deployments.
+
+Hiding the complexities of the underlying subsystems (version control, build system, testing framework, deployment target) behind the facade.
+
+Decoupling client code from the internal workflow, making the system easier to maintain, test, and evolve.

@@ -1,0 +1,47 @@
+Problem Statement: Resume Generator
+
+You are building a system to generate resumes for candidates.
+
+A resume can have the following sections (but not all are mandatory):
+
+Personal Information (name, email, phone) – required
+
+Education (multiple entries possible)
+
+Work Experience (multiple entries possible)
+
+Projects (multiple entries possible)
+
+Skills (list)
+
+Certifications (optional)
+
+Different candidates may want to include different sections 
+(e.g., a fresher may skip Work Experience, while an experienced professional may skip Projects).
+
+The system should allow constructing a customized resume step by step, and finally "build" the complete resume.
+
+******* Initial Solution
+- Builder
+
+    - ResumeBuilder
+    + all setters -> returns self
+    + build()->return Resume
+
+- Resume
+    + __init__
+    + __str__    
+
+- Client
+    
+    - builder = ResumeBuilder()
+
+    - fresher_resume = (
+        builder
+        .set_personal_info("Alice Johnson", "alice@example.com", "123-456-7890")
+        .add_education("B.Sc Computer Science, XYZ University")
+        .add_project("Personal Portfolio Website")
+        .add_skill("Python")
+        .add_skill("SQL")
+        .build()
+    )

@@ -1,0 +1,37 @@
+Builder Pattern: Meal Plan Generator
+
+You are tasked with designing a Meal Plan Generator for a nutrition app. 
+Each meal plan consists of several optional components:
+
+Main Dish (e.g., chicken, pasta, salad)
+
+Side Dish (e.g., fries, soup, vegetables)
+
+Drink (e.g., water, soda, juice)
+
+Dessert (e.g., cake, ice cream, fruit)
+
+Not every meal plan requires all components (e.g., a healthy plan might skip dessert, a diet plan might only allow water as a drink).
+
+Your goal is to build a flexible system where different meal plans can be created step by step, without forcing all components. 
+The system should allow easy extension if new meal types are added in the future.
+
+*** Initial Solution
+
+- MealPlan
+    - Entree
+    - Sides
+    - Drinks
+    - Desserts
+
+- Builder
+    - plan: MealPlan
+    - setters()->self
+    - build()->MealPlan
+
+    - MealBuilder
+
+- Client
+    - builder = MealBuilder()
+    - healthy = (builder.setters().build())
+    - print(healthy)

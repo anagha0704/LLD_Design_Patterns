@@ -1,0 +1,38 @@
+Adapter Pattern: Payment Gateway Adapter
+
+You are building an e-commerce application that processes payments.
+
+The application expects all payment methods to follow a common interface:
+
+class PaymentProcessor:
+    def pay(amount: float):
+        pass
+
+
+You want to integrate two third-party payment gateways, each with their own APIs:
+
+PayPal: send_payment(payment_amount)
+
+Stripe: make_payment(total_amount)
+
+The goal is to allow your application to process payments through PayPal or Stripe without changing the existing payment code.
+
+Your task is to design an Adapter for each payment gateway so that both conform to the PaymentProcessor interface, enabling seamless usage in your app.
+
+
+- PaymentProcessor
+    + pay(amount)
+
+    - TargetProcessor
+
+- PayPal
+    - make_payment(payment_amount)
+
+- Stripe
+    - send_payment(total_amount)
+
+- PayPalAdapter
+    - send()
+
+- StripeAdapter
+    - send()
