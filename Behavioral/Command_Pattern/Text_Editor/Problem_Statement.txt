@@ -1,0 +1,45 @@
+Command Pattern: Text Editor
+
+You are designing a Text Editor system with Undo/Redo functionality.
+
+The editor supports the following operations:
+
+WriteText – Append text at the end of the document.
+
+DeleteText – Delete the last n characters.
+
+CopyText – Copy a portion of the text.
+
+PasteText – Paste previously copied text.
+
+Requirements:
+
+Each operation should be encapsulated as a Command object.
+
+The editor should keep track of executed commands so that Undo and Redo can be performed.
+
+The system should be easily extendable (e.g., adding a Find & Replace command later should not affect existing code).
+
+****** Initial Solution
+
+- Command
+    + execute()
+    + undo()
+    + redo()
+
+    - WriteText
+    - DeleteText
+    - CopyText
+    - PasteText
+
+- Document                  # (Receiver)
+    + context: str
+
+- Editor                    # (Invoker)
+    + set_command(commmand: Command)
+    + execute()->command.execute()
+    + undo()
+
+- Client
+    - editor.set_command(WriteText)
+    - editor.execute()

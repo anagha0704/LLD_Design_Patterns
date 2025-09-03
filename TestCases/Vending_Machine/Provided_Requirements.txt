@@ -1,0 +1,57 @@
+- Requirements
+
+    The vending machine should support multiple products with different prices and quantities.
+
+    The machine should accept coins and notes of different denominations.
+
+    The machine should dispense the selected product and return change if necessary.
+
+    The machine should keep track of the available products and their quantities.
+
+    The machine should handle multiple transactions concurrently and ensure data consistency.
+
+    The machine should provide an interface for restocking products and collecting money.
+
+    The machine should handle exceptional scenarios, such as insufficient funds or out-of-stock products.
+
+
+*** Initial Solution
+- State pattern->Vending machine
+- Singleton pattern->multiple transactions concurrently
+
+
+- State
+    + select_item()
+    + insert_money()
+    + dispensing_item()
+    + refund()
+
+    - IdleState
+    - ItemSelectedState
+    - HasMoneyState
+    - DispensingState
+
+- Coin
+    Enum class with dime, quarter, dollar
+
+- Item 
+    - ItemId
+    - name
+    - price
+
+- Inventory
+    + add_item()
+    + reduce_item()
+    + get_item()
+    + isAvailable()
+
+- VendingMachine
+    + add_item()
+    + reduce_item()
+    + get_item()
+    + isAvailable()
+    + reset()
+    + IdleState
+    + ItemSelectedState
+    + HasMoneyState
+    + DispensingState

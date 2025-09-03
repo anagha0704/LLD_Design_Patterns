@@ -1,0 +1,41 @@
+State Pattern: Media Player
+
+You are building a Media Player application.
+
+The player can be in different states:
+
+- Stopped – Nothing is playing.
+
+- Playing – A track is currently playing.
+
+- Paused – A track is paused and can be resumed.
+
+Behavior rules:
+
+From Stopped, pressing Play starts the track and transitions to Playing.
+
+From Playing, pressing Pause pauses playback and transitions to Paused.
+
+From Paused, pressing Play resumes playback and transitions to Playing.
+
+From either Playing or Paused, pressing Stop stops the track and transitions to Stopped.
+
+***** Intial Solution
+
+- States
+
+    + play_track(track)
+    + pause_track()
+    + stop_track()
+
+    - Stopped
+    - Playing
+    - Paused
+    # chnage states from these classes
+
+- MediaPlayer
+    - state: States
+
+- Client
+    - player = Player(Stopped: State)
+    - player.play()-> state.play_track()
