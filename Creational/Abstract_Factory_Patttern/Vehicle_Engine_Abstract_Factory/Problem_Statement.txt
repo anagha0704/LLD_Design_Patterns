@@ -1,4 +1,4 @@
-Abstract Factory Patter: Vehicle + Engine Abstract Factory
+Abstract Factory Pattern: Vehicle + Engine Abstract Factory
 
 You are building a vehicle manufacturing system. Each vehicle comes with a specific type of engine, 
 and you want to group related products together without specifying their concrete classes in the client.

@@ -1,0 +1,29 @@
+You are building a UI framework that supports multiple themes (e.g., Light Theme and Dark Theme).
+
+Each theme provides its own Button and Checkbox styles.
+
+For example:
+
+Light Theme → LightButton, LightCheckbox
+
+Dark Theme → DarkButton, DarkCheckbox
+
+The client code should not need to know which specific class is being used.
+
+In the future, you may want to add new themes (e.g., High Contrast Theme) without modifying the client code.
+
+**** Initial Solution
+
+- Button
+
+- Checkbox
+
+- LightTheme
+
+- DarkTheme
+
+- Factory
+    - LightButton
+    - LightCheckbox
+    - DarkButton
+    - DarkCheckbox
