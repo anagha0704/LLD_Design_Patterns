@@ -1,0 +1,23 @@
+You are designing a basic image editing tool. 
+The tool should allow users to apply multiple filters or effects on an image. 
+Filters:
+- BrightnessFilter, ContrastFilter, GrayscaleFilter, WatermarkDecorator
+
+******** Initial Design
+
+- Image
+    - id
+    - content: "" # instead of file;  taking a string
+    - click()
+
+    - BaseImage
+        + click()
+
+- Decorstors/filters
+    + image: BaseImage()
+    + apply_filter()
+
+    - BrightnessFilter
+    - ContrastFilter
+    - GrayscaleFilter
+    - WatermarkDecorator
