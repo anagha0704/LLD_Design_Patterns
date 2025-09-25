@@ -1,0 +1,11 @@
+Problem Statement: Ice Cream Decorator
+
+You are tasked with designing a system for an ice cream shop that allows customers to build their own ice cream orders. 
+The shop sells different flavors of ice cream (like Vanilla, Chocolate, Strawberry), and customers can add various toppings (like Sprinkles, Nuts, Caramel, Chocolate Syrup, Whipped Cream, etc.).
+
+The requirements are:
+- Base Ice Cream Flavors should be represented as core objects (e.g., Vanilla, Chocolate).
+- Toppings should be added dynamically to these ice creams without modifying the base classes.
+- Each topping should add an extra description and extra cost to the base ice cream.
+- The system should support any combination of toppings in any order.
+- The solution should ensure flexibility and scalability for adding new toppings in the future.
