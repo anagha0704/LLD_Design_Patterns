@@ -1,0 +1,8 @@
+The shop sells ice cream and customers can add various toppings 
+(like Sprinkles, Nuts, Caramel, Chocolate Syrup, Whipped Cream, etc.).
+Ex:
+
+A plain Ice Cream costs $2.
+Adding Chocolate Syrup (+$0.5) and Nuts (+$1) should result in:
+Description: Ice Cream with Chocolate Syrup and Nuts
+Cost: $3.5
