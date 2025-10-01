@@ -1,0 +1,32 @@
+Meal Builder Problem Statement 🍔🥤🍟
+
+A restaurant offers customizable meal combos.
+A meal can include:
+
+Main item (e.g., Burger, Sandwich, Wrap)
+
+Side item (e.g., Fries, Salad, Nuggets)
+
+Drink (e.g., Coke, Juice, Water)
+
+Dessert (e.g., Ice Cream, Brownie)
+
+Not all meals need to include everything. For example:
+
+A Kids Meal may include: Burger + Fries + Juice.
+
+A Combo Meal may include: Sandwich + Fries + Coke + Ice Cream.
+
+A Healthy Meal may include: Wrap + Salad + Water.
+
+The restaurant wants a flexible way to construct different types of meals without having to create a separate class for each type of meal.
+
+Requirements
+
+Create a Meal class with attributes: mainItem, sideItem, drink, dessert.
+
+Implement a MealBuilder that allows step-by-step construction of a meal (e.g., withMainItem("Burger"), withDrink("Coke")).
+
+Provide a build() method that returns the final Meal object.
+
+Optionally, create a Director class to quickly build predefined meals like KidsMeal, ComboMeal, HealthyMeal.
