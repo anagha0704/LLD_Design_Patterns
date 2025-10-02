@@ -1,0 +1,28 @@
+Travel Booking Facade Problem Statement
+
+- A travel agency offers a system to book complete trips. A trip can include:
+
+1. Flight Booking – select origin, destination, and flight class.
+
+2. Hotel Booking – choose hotel, room type, and number of nights.
+
+3. Car Rental – choose car type and rental duration.
+
+Currently, each service has its own complex API with multiple steps:
+
+FlightBookingSystem: check availability, reserve seat, confirm payment.
+
+HotelBookingSystem: check room availability, reserve room, confirm payment.
+
+CarRentalSystem: check car availability, reserve car, confirm payment.
+
+A customer should be able to book a complete trip with a single call, without worrying about the internal complexities of each system.
+
+- Implement separate classes for FlightBooking, HotelBooking, and CarRental subsystems with methods like bookFlight(), bookHotel(), and bookCar().
+
+- Implement a TravelFacade class that provides a simplified method bookTrip() that:
+
+    - Books a flight
+    - Books a hotel
+    - Books a rental car
+    - Returns a summary of the complete trip booking
