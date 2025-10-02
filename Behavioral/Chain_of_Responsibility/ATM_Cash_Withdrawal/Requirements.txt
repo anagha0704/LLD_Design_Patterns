@@ -1,0 +1,36 @@
+ATM Cash Withdrawal Problem Statement
+
+An ATM machine dispenses cash in denominations of $100, $50, $20, and $10.
+When a user requests a withdrawal, the ATM should dispense the highest possible denominations first, then pass the remainder down the chain.
+
+For example:
+
+Request = $280 → 2 × $100, 1 × $50, 1 × $20, 1 × $10
+
+Request = $90 → 1 × $50, 2 × $20
+
+Request = $30 → 1 × $20, 1 × $10
+
+Requirements
+
+Implement a Handler interface / abstract class with a method dispense(amount) that processes part of the request and passes the remainder to the next handler.
+
+Create concrete handlers:
+
+Dollar100Dispenser
+
+Dollar50Dispenser
+
+Dollar20Dispenser
+
+Dollar10Dispenser
+
+Chain them together:
+
+$100 -> $50 -> $20 -> $10
+
+A ATMDispenser (client) will pass the withdrawal request to the first handler ($100).
+
+Each handler checks how many notes of its denomination fit into the remaining amount, dispenses them, and forwards the leftover amount to the next handler.
+
+If an amount not divisible by 10 is entered (like $125), the ATM should reject the request.
