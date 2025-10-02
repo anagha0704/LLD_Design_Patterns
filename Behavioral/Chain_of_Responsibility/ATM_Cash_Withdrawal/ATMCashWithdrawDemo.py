@@ -15,7 +15,7 @@ class ATMCashWithdrawDemo:
         dollar_50.set_next_handler(dollar_20)
         dollar_20.set_next_handler(dollar_10)
         
-        print("Enter the amount you would like to withdraw")
+        print("Enter the amount you would like to withdraw: ")
         amount = int(input())
 
         if amount % 10 != 0:
