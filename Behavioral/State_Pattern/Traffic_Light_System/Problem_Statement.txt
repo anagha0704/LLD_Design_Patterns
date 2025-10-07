@@ -1,0 +1,45 @@
+🚦 Problem Statement: Traffic Light System using the State Pattern
+
+You are tasked with designing a Traffic Light Control System for a busy intersection. 
+The traffic light cycles through three states — Red, Green, and Yellow — each representing a different behavior.
+
+Your goal is to implement this system using the State Design Pattern, 
+where each light state encapsulates its own behavior and defines the transition to the next state.
+
+🎯 Requirements
+
+The system should have three states:
+
+Red Light State
+
+Display: “RED — Stop!”
+
+Next state: Green
+
+Green Light State
+
+Display: “GREEN — Go!”
+
+Next state: Yellow
+
+Yellow Light State
+
+Display: “YELLOW — Slow down!”
+
+Next state: Red
+
+There should be a TrafficLightContext class that:
+
+Holds the current state.
+
+Delegates the behavior to the current state.
+
+Allows state transitions (handled by the current state itself).
+
+You should be able to:
+
+Initialize the light in Red state.
+
+Call a method like next_state() or change() to move to the next state.
+
+Continuously loop through states in order (Red → Green → Yellow → Red → ...).

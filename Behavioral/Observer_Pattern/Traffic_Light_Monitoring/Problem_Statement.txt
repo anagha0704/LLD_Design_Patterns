@@ -1,0 +1,45 @@
+Problem Statement: Traffic Light Monitoring System
+
+You are designing a Traffic Light Monitoring System for a smart city.
+The city’s Central Traffic Controller (CTC) oversees multiple intersections, each with its own traffic light.
+
+Whenever a traffic light changes its state (e.g., from RED → GREEN, GREEN → YELLOW, etc.), 
+all registered observers (such as the CTC, Emergency Response System, and Traffic Data Logger) must be notified automatically.
+
+This ensures:
+
+The CTC can coordinate other nearby intersections to prevent congestion.
+
+The Emergency Response System can prioritize certain routes for ambulances.
+
+The Traffic Data Logger can record the changes for analytics.
+
+🧠 Requirements
+
+TrafficLight (Subject)
+
+Maintains its current state (RED, YELLOW, GREEN).
+
+Allows observers to register and unregister.
+
+Notifies all observers whenever the light changes.
+
+Observer Interface
+
+Each observer implements an update(state) method that receives the new light state.
+
+Concrete Observers
+
+CentralTrafficController → adjusts timing for nearby intersections.
+
+EmergencyResponseSystem → checks if emergency vehicles are waiting.
+
+TrafficDataLogger → records every state change for analytics.
+
+Demo Scenario
+
+Create one TrafficLight object.
+
+Register all three observers.
+
+Simulate a few state changes (RED → GREEN → YELLOW → RED) and observe how each observer reacts.

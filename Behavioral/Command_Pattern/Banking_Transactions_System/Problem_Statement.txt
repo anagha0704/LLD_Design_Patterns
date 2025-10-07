@@ -1,0 +1,58 @@
+🏦 Problem Statement: Banking Transactions System
+
+You are designing a banking system where different types of transactions — 
+Deposit, Withdraw, and Transfer — can be performed on a bank account.
+
+Each transaction should be encapsulated as a command, allowing it to be:
+
+Executed immediately
+
+Queued for later
+
+Logged for auditing
+
+Undone, if necessary (e.g., to rollback a transaction failure)
+
+🧠 Requirements
+
+Command Interface
+
+Declares methods execute() and undo().
+
+Every concrete command will implement these two methods.
+
+Concrete Commands
+
+DepositCommand: Adds funds to an account.
+
+WithdrawCommand: Deducts funds from an account.
+
+TransferCommand: Moves funds between two accounts.
+
+Receiver (BankAccount)
+
+Represents a real bank account.
+
+Has methods like deposit(amount) and withdraw(amount).
+
+Keeps track of current balance.
+
+Invoker (TransactionManager)
+
+Executes, logs, and stores transactions.
+
+Maintains a history stack to allow undo/redo operations.
+
+Demo Scenario
+
+Create two bank accounts: Account A and Account B.
+
+Perform these operations using the command pattern:
+
+Deposit $500 into Account A.
+
+Withdraw $200 from Account A.
+
+Transfer $100 from Account A to Account B.
+
+Then perform undo on the last transaction (the transfer).

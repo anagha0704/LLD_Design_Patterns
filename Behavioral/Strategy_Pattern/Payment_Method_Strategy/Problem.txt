@@ -1,0 +1,38 @@
+An e-commerce platform allows users to pay for their orders using different payment methods.
+Currently, the platform supports:
+
+Credit Card – user provides card number, expiry date, and CVV.
+
+PayPal – user logs in to their PayPal account to authorize payment.
+
+Cryptocurrency – user sends crypto from their wallet.
+
+Problem
+
+You want a flexible system where:
+
+The checkout process doesn’t need to know the details of each payment method.
+
+Users can choose the payment method at runtime.
+
+Adding new payment methods in the future should not require modifying the checkout process.
+
+Requirements
+
+Define a PaymentStrategy interface with a method pay(amount).
+
+Implement concrete strategies:
+
+CreditCardPayment
+
+PayPalPayment
+
+CryptoPayment
+
+Implement a ShoppingCart (or Checkout) class that:
+
+Accepts a PaymentStrategy object.
+
+Calls the pay(amount) method of the chosen strategy.
+
+The client code should be able to switch payment strategies dynamically:
