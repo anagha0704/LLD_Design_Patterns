@@ -1,0 +1,39 @@
+🌡️ Problem Statement — Temperature Sensor Adapter
+
+Your company is building a Smart Home Monitoring System that collects temperature readings from multiple sensors.
+The system expects all sensors to provide temperature in Celsius through a standard 
+interface called TemperatureSensor, which defines a single method:
+
+def get_temperature(self) -> float:
+    """Returns temperature in Celsius"""
+
+
+However, your new third-party sensor library (FahrenheitThermometer) provides the temperature in Fahrenheit using this method:
+
+def get_temperature_f(self) -> float:
+    """Returns temperature in Fahrenheit"""
+
+
+You cannot modify the third-party class, but you still want to integrate it seamlessly with your system that expects Celsius readings.
+
+🧩 Your Task:
+
+Implement an Adapter Pattern so that the FahrenheitThermometer can be used wherever a TemperatureSensor is expected.
+
+🏗️ Expected Structure:
+
+Target Interface:
+TemperatureSensor → defines get_temperature() returning Celsius.
+
+Adaptee:
+FahrenheitThermometer → existing class returning Fahrenheit readings via get_temperature_f().
+
+Adapter:
+FahrenheitToCelsiusAdapter → wraps a FahrenheitThermometer instance, converts the Fahrenheit result to Celsius, and returns it via the get_temperature() method.
+
+Client (Demo class):
+Creates both a native Celsius sensor and a Fahrenheit sensor (through the adapter) and prints consistent readings in Celsius.
+
+🌡️ Example Output:
+Celsius Sensor Reading: 25.0°C
+Fahrenheit Sensor Reading (converted): 24.44°C
