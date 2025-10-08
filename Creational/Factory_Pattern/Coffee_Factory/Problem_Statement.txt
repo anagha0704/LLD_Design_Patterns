@@ -1,0 +1,62 @@
+☕ Problem Statement — Coffee Factory
+
+You are building a Coffee Ordering System for a café.
+The café offers three types of coffee:
+
+    Espresso
+    Latte
+    Cappuccino
+
+Each coffee type has its own preparation steps, but every coffee implements a common interface that defines a method:
+
+def prepare(self) -> str:
+    """Prepares and returns a message describing the coffee."""
+
+🎯 Goal:
+
+Design a CoffeeFactory that can create coffee objects dynamically based on customer input.
+The client should not know which concrete coffee class is being instantiated.
+
+🏗️ Required Components:
+
+Interface (Abstract Class) → Coffee
+
+Defines prepare().
+
+Concrete Classes:
+
+Espresso
+
+Latte
+
+Cappuccino
+
+Each class implements prepare() and prints its own preparation process.
+
+Factory Class:
+
+CoffeeFactory
+
+Contains a static method get_coffee(coffee_type: str) that returns an instance of the requested coffee.
+
+If the coffee type is invalid, raise a ValueError("Invalid coffee type").
+
+Client (Demo Class):
+
+Asks the user for input or uses predefined inputs like "espresso", "latte", "cappuccino".
+
+Uses CoffeeFactory to get the coffee object and calls its prepare() method.
+
+💡 Example Output:
+Enter coffee type: latte
+Brewing rich espresso...
+Steaming milk and pouring it...
+Topping with foam...
+Your Latte is ready! ☕
+
+
+Or if the client hardcodes types:
+
+Espresso → Brewing strong espresso shot... Done!
+Latte → Brewing espresso, adding steamed milk... Done!
+Cappuccino → Brewing espresso, adding milk foam... Done!
